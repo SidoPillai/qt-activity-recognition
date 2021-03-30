@@ -46,7 +46,6 @@ public class ActivityRecognizer
 
     public void init(Context context, long instance)
     {
-
         mContext = context;
         g_Instance = instance;
         mActivityRecognitionClient = new ActivityRecognitionClient(mContext);
