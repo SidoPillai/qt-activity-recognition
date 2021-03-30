@@ -29,7 +29,7 @@ public:
     Q_INVOKABLE void stop();
 
 signals:
-    void activityDetected(QVariant activity);
+    void activityDetected(QString activity);
     void error(QString errorMessage);
     void stateChanged();
 

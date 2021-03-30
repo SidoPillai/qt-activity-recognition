@@ -74,7 +74,7 @@ void AndroidActivityRecognition::updateDetectedActivities(JNIEnv *env, jobject t
     Q_UNUSED(thiz)
 
     QString qstr(env->GetStringUTFChars(detectedActivities, 0));
-    g_Instance->setActivities(QVariant(qstr));
+    g_Instance->setActivities(qstr);
 }
 
 //------------------------------------------------------------------------------

@@ -21,8 +21,6 @@ QT += androidextras
 HEADERS += AndroidActivityRecognition.h
 SOURCES += AndroidActivityRecognition.cpp
 
-ANDROID_ABIS = armeabi-v7a
-
 DISTFILES += \
     android/AndroidManifest.xml \
     android/build.gradle \
@@ -57,4 +55,6 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+ANDROID_ABIS = armeabi-v7a
 

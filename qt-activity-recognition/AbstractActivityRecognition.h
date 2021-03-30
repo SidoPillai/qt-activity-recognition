@@ -12,7 +12,7 @@ public:
     AbstractActivityRecognition()
     {
         m_Status = -1;
-        m_DetectedActivities = QVariant();
+        m_DetectedActivities = QString();
     }
 
 signals:
@@ -25,12 +25,12 @@ public:
     virtual void stop() {}
     void setState(int state) { m_Status = state; emit stateChanged(); }
     int status() { return m_Status; }
-    QVariant activities() { return m_DetectedActivities; }
-    void setActivities(QVariant activities) { m_DetectedActivities = activities; emit activityDetected(); }
+    QString activities() { return m_DetectedActivities; }
+    void setActivities(QString activity) { m_DetectedActivities = activity; emit activityDetected(); }
 
 private:
     int             m_Status;
-    QVariant        m_DetectedActivities;
+    QString        m_DetectedActivities;
 };
 
 #endif // ABSTRACTACTIVITYRECOGNITION_H

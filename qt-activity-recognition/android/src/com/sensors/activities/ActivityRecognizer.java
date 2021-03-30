@@ -4,8 +4,6 @@ import android.app.*;
 import android.content.*;
 
 import java.util.ArrayList;
-import org.json.JSONObject;
-import org.json.JSONArray;
 
 import android.content.Context;
 import android.util.Log;
@@ -151,26 +149,8 @@ public class ActivityRecognizer
         {
             Log.d(TAG, "Received activity update");
             ArrayList<DetectedActivity> updatedActivities = intent.getParcelableArrayListExtra(DetectedActivityIntentService.ACTIVITY_EXTRA);
-            int resultsSize = updatedActivities.size();
-            JSONObject json = new JSONObject();
-            JSONArray array = new JSONArray();
-
-            try
-            {
-                for ( int i = 0; i < resultsSize; i++ )
-                {
-                    JSONObject item = new JSONObject();
-                    DetectedActivity da = updatedActivities.get(i);
-                    item.put(getActivityString(da.getType()), da.getConfidence());
-                    array.put(item);
-                }
-                json.put("detected", array);
-                updateDetectedActivities(json.toString());
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
+            DetectedActivity da = updatedActivities.get(0);
+            updateDetectedActivities(getActivityString(da.getType()));
         }
     }
 
