@@ -27,7 +27,7 @@ AndroidActivityRecognition::AndroidActivityRecognition() :
     {
         {
             "updateDetectedActivities",
-            "()V",
+            "(Ljava/lang/String;)V",
             reinterpret_cast<void *>(&AndroidActivityRecognition::updateDetectedActivities)
 
         },
